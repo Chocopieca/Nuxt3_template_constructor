@@ -1,0 +1,91 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+:root {
+    --ui-color-primary-500: #e03131;       /* thoughtbot Red */
+    --ui-color-secondary-500: #3d3e44;     /* Gray Medium */
+    --ui-color-secondary-600: #f0f0f8;     /* Light Gray Medium */
+    --ui-color-success-500: #2e52e4;       /* Blue (условно как success) */
+    --ui-color-info-500: #6931e0;          /* Purple */
+    --ui-color-warning-500: #ffc726;       /* Yellow */
+    --ui-color-error-500: #e03131;         /* Красный повторно как error */
+
+    --ui-primary: var(--ui-color-primary-500);
+    --ui-secondary: var(--ui-color-secondary-500);
+    --ui-success: var(--ui-color-success-500);
+    --ui-info: var(--ui-color-info-500);
+    --ui-warning: var(--ui-color-warning-500);
+    --ui-error: var(--ui-color-error-500);
+
+    /* Типографика */
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-heading: 'Poppins', system-ui, -apple-system, sans-serif;
+    --font-body: 'Open Sans', system-ui, -apple-system, sans-serif;
+}
+
+/* Темная тема */
+.dark {
+  --color-background: #1a1a1a;
+  --color-background-alt: #2d2d2d;
+  --color-text: #ffffff;
+}
+
+/* Базовые стили */
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background-color: var(--color-background);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1rem; }
+
+/* Контейнеры */
+.container {
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Текстовый контент */
+.prose, .content {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Переопределение цветов Nuxt UI */
+:root {
+  --color-primary-50: #f0f4f8;
+  --color-primary-100: #d9e2ec;
+  --color-primary-200: #b3c5d7;
+  --color-primary-300: #8da0b8;
+  --color-primary-400: #677b99;
+  --color-primary-500: #1d3557;
+  --color-primary-600: #1a2f4d;
+  --color-primary-700: #162943;
+  --color-primary-800: #122339;
+  --color-primary-900: #0e1d2f;
+
+  --color-accent-50: #fef2f2;
+  --color-accent-100: #fee2e2;
+  --color-accent-200: #fecaca;
+  --color-accent-300: #fca5a5;
+  --color-accent-400: #f87171;
+  --color-accent-500: #e63946;
+  --color-accent-600: #dc2626;
+  --color-accent-700: #b91c1c;
+  --color-accent-800: #991b1b;
+  --color-accent-900: #7f1d1d;
+}
