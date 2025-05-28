@@ -1,23 +1,31 @@
 <template>
-  <header class="bg-secondary-500 sticky top-0 z-50">
+  <header class="bg-background sticky top-0 z-50 border-b border-metallic/10">
     <div class="container mx-auto px-4">
-      <div class="flex items-center justify-between h-30">
+      <div class="flex items-center justify-between h-16 md:h-20">
         <!-- Logo -->
-        <NuxtLink to="/" class="flex items-center space-x-2 group">
-          <img src="/logo.png" :alt="t('company.name')" class="w-[150px] h-[150px] object-contain" />
+        <NuxtLink to="/" class="flex items-center space-x-2 group animate-pulse">
+          <NuxtImg 
+            src="/logo.jpg" 
+            :alt="t('header.logo.name')" 
+            class="object-contain transition-all duration-300 group-hover:scale-105 group-hover:brightness-110"
+            width="200"
+            loading="eager"
+            quality="90"
+          />
         </NuxtLink>
 
         <!-- Navigation -->
-        <AppNavigation>
+        <AppNavigation :items="navigationConfig">
           <template #cta>
-            <UButton
-              to="/contact"
-              color="warning"
-              variant="solid"
-              class="ml-4"
-            >
-              {{ t('components.header.ctaButton') }}
-            </UButton>
+            <NuxtLink to="#">
+              <NuxtImg 
+                src="/get-it-on-google-play-logo.png"
+                alt="Get it on Google Play"
+                class="object-contain animate-pulse"
+                height="100px"
+                loading="lazy"
+              />
+            </NuxtLink>
           </template>
         </AppNavigation>
       </div>
@@ -27,13 +35,7 @@
 
 <script setup>
 import { useI18n } from 'vue-i18n'
+import { navigationConfig } from '~/config/site'
 
 const { t } = useI18n()
-// Navigation config is imported in AppNavigation component
 </script>
-
-<style scoped>
-.backdrop-blur-md {
-  backdrop-filter: blur(12px);
-}
-</style> 

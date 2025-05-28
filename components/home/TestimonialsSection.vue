@@ -1,79 +1,101 @@
 <template>
-  <section class="testimonials-section py-24 bg-gray-100">
-    <div class="container max-w-7xl mx-auto px-4">
-      <h2 class="text-4xl font-bold text-center mb-16 text-gray-800">{{ t('components.testimonials.title') }}</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Testimonial 1 -->
-        <AppCard>
-          <div class="flex items-center mb-6">
-            <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center text-primary-500 font-bold text-xl">
-              {{ getInitials(t('components.testimonials.items.0.name')) }}
-            </div>
-            <div class="ml-4">
-              <h4 class="font-semibold text-lg text-gray-800">{{ t('components.testimonials.items.0.name') }}</h4>
-              <p class="text-sm text-gray-600">{{ t('components.testimonials.items.0.position') }}</p>
-            </div>
-          </div>
-          <p class="text-gray-600 leading-relaxed">
-            {{ t('components.testimonials.items.0.quote') }}
-          </p>
-        </AppCard>
+  <section id="testimonials" class="py-24 bg-nightfall relative overflow-hidden">
+    <!-- Background Pattern -->
+    <div class="absolute inset-0 opacity-10">
+      <div class="grid-pattern"></div>
+    </div>
 
-        <!-- Testimonial 2 -->
-        <AppCard>
-          <div class="flex items-center mb-6">
-            <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center text-primary-500 font-bold text-xl">
-              {{ getInitials(t('components.testimonials.items.1.name')) }}
-            </div>
-            <div class="ml-4">
-              <h4 class="font-semibold text-lg text-gray-800">{{ t('components.testimonials.items.1.name') }}</h4>
-              <p class="text-sm text-gray-600">{{ t('components.testimonials.items.1.position') }}</p>
-            </div>
-          </div>
-          <p class="text-gray-600 leading-relaxed">
-            {{ t('components.testimonials.items.1.quote') }}
-            <button
-              class="cursor-pointer mt-4 bg-primary-500 hover:bg-primary-600 text-white px-4 py-2 rounded-lg font-medium inline-flex items-center group transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
-            >
-              <span class="mr-2">{{ t('components.testimonials.downloadButton') }}</span>
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform group-hover:translate-y-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-              </svg>
-            </button>
-          </p>
-        </AppCard>
+    <div class="container max-w-7xl mx-auto px-4 relative z-10">
+      <!-- Section Title -->
+      <h2 class="text-4xl md:text-5xl font-heading font-bold mb-16 text-white text-center glitch-text">
+        {{ t('testimonials.title') }}
+      </h2>
 
-        <!-- Testimonial 3 -->
-        <AppCard>
-          <div class="flex items-center mb-6">
-            <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center text-primary-500 font-bold text-xl">
-              {{ getInitials(t('components.testimonials.items.2.name')) }}
+      <!-- Testimonials Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div 
+          v-for="(testimonial, index) in tm('testimonials.items')" 
+          :key="index"
+          class="testimonial-card bg-background/30 backdrop-blur-sm p-8 rounded-lg border border-sci-fi/20 hover:border-sci-fi/40 transition-all duration-300 relative"
+        >
+          <!-- Quote Icon -->
+          <div class="absolute top-6 right-6 text-accent/20">
+            <Icon name="heroicons:chat-bubble-left-right" class="w-8 h-8" />
+          </div>
+
+          <!-- Testimonial Content -->
+          <div class="flex flex-col h-full">
+            <!-- Avatar -->
+            <div class="w-20 h-20 rounded-full bg-accent/20 flex items-center justify-center mb-6 mx-auto overflow-hidden">
+              <div 
+                class="w-full h-full bg-cover bg-center"
+                :style="getAvatarStyle(index)"
+              ></div>
             </div>
-            <div class="ml-4">
-              <h4 class="font-semibold text-lg text-gray-800">{{ t('components.testimonials.items.2.name') }}</h4>
-              <p class="text-sm text-gray-600">{{ t('components.testimonials.items.2.position') }}</p>
+
+            <!-- Text -->
+            <p class="text-text-secondary mb-6 flex-grow">
+              "{{ rt(testimonial.text) }}"
+            </p>
+
+            <!-- Author -->
+            <div class="text-white font-subheading font-semibold text-center">
+              {{ rt(testimonial.name) }}
             </div>
           </div>
-          <p class="text-gray-600 leading-relaxed">
-            {{ t('components.testimonials.items.2.quote') }}
-          </p>
-        </AppCard>
+
+          <!-- Hover Effect -->
+          <div class="absolute inset-0 bg-gradient-to-r from-accent/10 to-sci-fi/10 opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
+        </div>
       </div>
     </div>
   </section>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import { useI18n } from 'vue-i18n'
-import AppCard from '~/components/AppCard.vue'
 
-const { t } = useI18n()
+const { t, tm, rt } = useI18n()
 
-const getInitials = (name: string) => {
-  return name
-    .split(' ')
-    .map(word => word[0])
-    .join('')
-    .toUpperCase()
+const getAvatarStyle = (index) => {
+  const avatars = {
+    0: {
+      backgroundImage: 'url(/img/characters.webp)',
+      backgroundPosition: '10% 13%', // Первый персонаж
+      backgroundSize: '600% 600%'
+    },
+    1: {
+      backgroundImage: 'url(/img/characters.webp)',
+      backgroundPosition: '47% 13%', // Второй персонаж
+      backgroundSize: '600% 600%'
+    },
+    2: {
+      backgroundImage: 'url(/img/characters.webp)',
+      backgroundPosition: '84% 13%', // Третий персонаж
+      backgroundSize: '600% 600%'
+    }
+  }
+  return avatars[index] || avatars[0]
 }
-</script> 
+</script>
+
+<style scoped>
+.testimonial-card {
+  transform: translateY(0);
+  transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Добавляем эффект свечения для аватаров */
+.w-20.h-20 {
+  box-shadow: 0 0 15px rgba(255, 59, 48, 0.3);
+  transition: box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover .w-20.h-20 {
+  box-shadow: 0 0 25px rgba(255, 59, 48, 0.5);
+}
+</style> 

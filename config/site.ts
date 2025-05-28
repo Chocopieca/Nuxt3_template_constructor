@@ -28,9 +28,9 @@ export interface HomeSectionConfig {
 
 // Logo configuration
 export const logoConfig: LogoConfig = {
-  icon: 'i-heroicons-code-bracket',
-  text: 'Elegant Space Designs',
-  color: 'text-primary-500'
+  icon: 'i-mdi-gamepad-variant',
+  text: 'Killing Floor: Calamity',
+  color: 'text-accent'
 }
 
 // Home page sections configuration
@@ -39,21 +39,25 @@ export const homeSectionsConfig: { [key: string]: HomeSectionConfig } = {
     enabled: true,
     order: 1
   },
-  benefits: {
+  gameplay: {
     enabled: true,
     order: 2
   },
-  services: {
+  gallery: {
     enabled: true,
     order: 3
   },
-  testimonials: {
+  features: {
     enabled: true,
     order: 4
   },
-  cta: {
+  testimonials: {
     enabled: true,
     order: 5
+  },
+  contact: {
+    enabled: true,
+    order: 6
   }
 }
 
@@ -99,17 +103,13 @@ export const servicesImages: Record<string, ImageConfig> = {
 // Navigation configuration
 export const navigationConfig: NavItem[] = [
   {
-    label: 'Services',
-    to: '/services',
-    children: [
-      { label: 'Web Design', to: SERVICE_ROUTES[SERVICES.WEB_DESIGN] },
-      { label: 'Brand Identity', to: SERVICE_ROUTES[SERVICES.BRAND_IDENTITY] },
-      { label: 'UI/UX Design', to: SERVICE_ROUTES[SERVICES.UI_UX_DESIGN] },
-      { label: 'Print Design', to: SERVICE_ROUTES[SERVICES.PRINT_DESIGN] },
-      { label: 'Motion Design', to: SERVICE_ROUTES[SERVICES.MOTION_DESIGN] }
-    ]
+    label: 'Contact',
+    to: '/#contact'
   },
-  { label: 'About', to: '/about' }
+  {
+    label: 'Privacy Policy',
+    to: '/legal/privacy'
+  }
 ]
 
 // Footer configuration
@@ -136,9 +136,9 @@ export const footerConfig = {
       title: 'Legal',
       links: [
         { label: 'Privacy Policy', to: LEGAL_ROUTES[LEGAL.PRIVACY] },
-        { label: 'Terms of Service', to: LEGAL_ROUTES[LEGAL.TERMS] },
-        { label: 'Cookie Policy', to: LEGAL_ROUTES[LEGAL.COOKIES] },
-        { label: 'Disclaimer', to: LEGAL_ROUTES[LEGAL.DISCLAIMER] }
+        // { label: 'Terms of Service', to: LEGAL_ROUTES[LEGAL.TERMS] },
+        // { label: 'Cookie Policy', to: LEGAL_ROUTES[LEGAL.COOKIES] },
+        // { label: 'Disclaimer', to: LEGAL_ROUTES[LEGAL.DISCLAIMER] }
       ]
     }
   ],
@@ -164,24 +164,24 @@ export const footerConfig = {
 // Contact information configuration
 export const contactConfig = {
   location: {
-    title: 'Office Location',
+    title: 'Lokalizacja Biura',
     address: {
-      city: 'Sydney',
-      country: 'Australia',
-      street: 'Level 15, 123 Business Street',
-      state: 'NSW',
-      postcode: '2000'
+      city: 'Warszawa',
+      country: 'Polska',
+      street: 'ul. Przykładowa 123',
+      state: 'Mazowieckie',
+      postcode: '00-001'
     }
   },
-  phone: '+61 2 1234 5678',
-  email: 'info@elegantspacedesigns.com',
+  phone: '+48 123 456 789',
+  email: 'kontakt@gamebuzz360.pl',
   workingHours: {
-    days: 'Monday - Friday',
-    hours: '9:00 AM - 6:00 PM AEST'
+    days: 'Poniedziałek - Piątek',
+    hours: '9:00 - 17:00 CET'
   },
   weekend: {
-    days: 'Saturday - Sunday',
-    status: 'Closed'
+    days: 'Sobota - Niedziela',
+    status: 'Zamknięte'
   }
 }
 
@@ -190,10 +190,10 @@ export const testimonialConfig = {
   testimonial2Link: 'https://example.com/testimonial2'
 }
 
-export const humanVerificationEnabled = true
+export const humanVerificationEnabled = false
 export const socilaNetworkEnabled = false
 export const newsletterConfig = {
-  enabled: true
+  enabled: false
 }
 export const cookieConsentConfig = true
 

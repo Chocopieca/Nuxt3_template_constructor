@@ -1,34 +1,35 @@
 <template>
   <div>
-    <HeroSection v-if="isComponentEnabled('home')">
+    <HeroSection>
       <template #background>
-        <div class="absolute inset-0 bg-gradient-to-br from-gray-900 to-gray-800">
-          <img 
-            src="/banner.jpg" 
-            alt="Hero Background" 
-            class="w-full h-full object-cover opacity-50"
-          />
-        </div>
+        <NuxtImg 
+          src="/banner.jpg" 
+          alt="Hero Background" 
+          class="w-full h-full object-cover opacity-50"
+          width="1920"
+          height="1080"
+          loading="lazy"
+          sizes="100vw sm:50vw md:100vw"
+        />
       </template>
     </HeroSection>
-    
-    <BenefitsSection v-if="isComponentEnabled('home')" />
-    <ServicesOverview v-if="isComponentEnabled('home')" />
-    <TestimonialsSection v-if="isComponentEnabled('home')" />
-    <CTASection v-if="isComponentEnabled('home')" />
+    <GameplaySection />
+    <GallerySection />
+    <FeaturesSection />
+    <TestimonialsSection />
+    <CTASection />
   </div>
 </template>
 
 <script setup lang="ts">
-import { useTemplate } from '~/templates/default/config/useTemplate'
 import { useI18n } from 'vue-i18n'
-import HeroSection from '~/templates/default/components/home/HeroSection.vue'
-import ServicesOverview from '~/templates/default/components/home/ServicesOverview.vue'
-import BenefitsSection from '~/templates/default/components/home/BenefitsSection.vue'
-import TestimonialsSection from '~/templates/default/components/home/TestimonialsSection.vue'
-import CTASection from '~/templates/default/components/home/CTASection.vue'
+import HeroSection from '~/components/home/HeroSection.vue'
+import GameplaySection from '~/components/home/GameplaySection.vue'
+import GallerySection from '~/components/home/GallerySection.vue'
+import FeaturesSection from '~/components/home/FeaturesSection.vue'
+import TestimonialsSection from '~/components/home/TestimonialsSection.vue'
+import CTASection from '~/components/home/CTASection.vue'
 
-const { isComponentEnabled } = useTemplate()
 const { t } = useI18n()
 
 // SEO meta

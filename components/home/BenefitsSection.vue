@@ -15,10 +15,14 @@
             </p>
           </div>
           <div class="relative h-80 bg-gray-200 rounded-lg overflow-hidden">
-            <img 
+            <NuxtImg 
               :src="benefitsImages[BENEFIT_IMAGES.BUSINESS_FOCUS].src"
               :alt="benefitsImages[BENEFIT_IMAGES.BUSINESS_FOCUS].alt"
               class="w-full h-full object-cover"
+              width="800"
+              height="400"
+              loading="lazy"
+              sizes="sm:100vw md:50vw lg:800px"
             />
           </div>
         </div>
@@ -35,10 +39,14 @@
             </p>
           </div>
           <div class="relative h-80 bg-gray-200 rounded-lg overflow-hidden md:order-1">
-            <img 
+            <NuxtImg 
               :src="benefitsImages[BENEFIT_IMAGES.EXPERT_SOLUTIONS].src"
               :alt="benefitsImages[BENEFIT_IMAGES.EXPERT_SOLUTIONS].alt"
               class="w-full h-full object-cover"
+              width="800"
+              height="400"
+              loading="lazy"
+              sizes="sm:100vw md:50vw lg:800px"
             />
           </div>
         </div>
@@ -55,10 +63,14 @@
             </p>
           </div>
           <div class="relative h-80 bg-gray-200 rounded-lg overflow-hidden">
-            <img 
+            <NuxtImg 
               :src="benefitsImages[BENEFIT_IMAGES.INNOVATIVE_APPROACH].src"
               :alt="benefitsImages[BENEFIT_IMAGES.INNOVATIVE_APPROACH].alt"
               class="w-full h-full object-cover"
+              width="800"
+              height="400"
+              loading="lazy"
+              sizes="sm:100vw md:50vw lg:800px"
             />
           </div>
         </div>

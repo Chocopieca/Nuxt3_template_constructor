@@ -18,10 +18,14 @@
             </p>
           </div>
           <div class="relative h-80 rounded-lg overflow-hidden">
-            <img 
+            <NuxtImg 
               :src="aboutImages['Who We Are'].src" 
               :alt="aboutImages['Who We Are'].alt"
               class="w-full h-full object-cover"
+              width="1200"
+              height="600"
+              loading="lazy"
+              sizes="sm:100vw md:50vw lg:1200px"
             />
           </div> 
         </div>
@@ -29,10 +33,14 @@
         <!-- Mission & Vision -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-24">
           <div class="relative h-80 rounded-lg overflow-hidden order-2 md:order-1">
-            <img 
+            <NuxtImg 
               :src="aboutImages['Our Mission'].src" 
               :alt="aboutImages['Our Mission'].alt"
               class="w-full h-full object-cover"
+              width="1200"
+              height="600"
+              loading="lazy"
+              sizes="sm:100vw md:50vw lg:1200px"
             />
           </div>
           <div class="space-y-6 order-1 md:order-2">
@@ -62,10 +70,14 @@
             </ul>
           </div>
           <div class="relative h-80 rounded-lg overflow-hidden">
-            <img 
+            <NuxtImg 
               :src="aboutImages['Our Values'].src" 
               :alt="aboutImages['Our Values'].alt"
               class="w-full h-full object-cover"
+              width="800"
+              height="400"
+              loading="lazy"
+              sizes="sm:100vw md:50vw lg:800px"
             />
           </div>
         </div>

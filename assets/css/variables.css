@@ -1,0 +1,84 @@
+:root {
+  /* Main Colors */
+  --color-primary: #1A1A1A;
+  --color-accent: #FF3B30;
+  --color-secondary-accent: #FF9500;
+  --color-sci-fi: #007AFF;
+  --color-metallic: #8E8E93;
+  --color-nightfall: #2C2C54;
+  --color-background: #000000;
+  --color-text: #FFFFFF;
+  --color-text-secondary: #8E8E93;
+
+  /* Main Colors */
+  --ui-primary: #1A1A1A;
+  --ui-accent: #FF3B30;
+  --ui-secondary-accent: #FF9500;
+  --ui-sci-fi: #007AFF;
+  --ui-metallic: #8E8E93;
+  --ui-nightfall: #2C2C54;
+  --ui-background: #000000;
+  --ui-text: #FFFFFF;
+  --ui-text-secondary: #8E8E93;
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, var(--color-primary) 0%, var(--color-nightfall) 100%);
+  --gradient-accent: linear-gradient(135deg, var(--color-accent) 0%, var(--color-secondary-accent) 100%);
+  
+  /* Typography */
+  --font-heading: 'Orbitron', sans-serif;
+  --font-subheading: 'Rajdhani', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Font Sizes */
+  --text-h1: 48px;
+  --text-h2: 36px;
+  --text-h3: 24px;
+  --text-body: 16px;
+
+  /* Border Radius */
+  --radius-small: 12px;
+  --radius-medium: 16px;
+  --radius-large: 24px;
+
+  /* Shadows */
+  --shadow-neomorphic: 
+    8px 8px 16px rgba(0, 0, 0, 0.3),
+    -8px -8px 16px rgba(255, 255, 255, 0.05);
+  
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-medium: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}
+
+/* Base Styles */
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background-color: var(--color-background);
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
+
+h1 { font-size: var(--text-h1); }
+h2 { font-size: var(--text-h2); }
+h3 { font-size: var(--text-h3); }
+
+/* Neomorphic Elements */
+.neomorphic {
+  background: var(--color-primary);
+  border-radius: var(--radius-medium);
+  box-shadow: var(--shadow-neomorphic);
+  transition: var(--transition-medium);
+}
+
+.neomorphic:hover {
+  box-shadow: 
+    12px 12px 20px rgba(0, 0, 0, 0.4),
+    -12px -12px 20px rgba(255, 255, 255, 0.07);
+} 

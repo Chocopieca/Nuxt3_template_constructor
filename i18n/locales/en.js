@@ -15,13 +15,19 @@ export default {
       description: "Fill out the form below to get in touch with our team. We'll respond to your inquiry within 24 hours."
     },
     cookieConsent: {
-      title: "We use cookies",
-      description: "This website uses cookies to enhance your experience. By continuing to use this site, you agree to our use of cookies.",
-      acceptButton: "Accept",
-      declineButton: "Decline"
+      title: "Cookie Settings",
+      description: "We use cookies to enhance your gaming experience, analyze site traffic, and personalize content. By continuing to use our site, you agree to our use of cookies.",
+      acceptButton: "Accept All",
+      declineButton: "Essential Only"
     },
     header: {
-      ctaButton: "Contact Us"
+      ctaButton: "Contact Us",
+      navigation: {
+        home: 'Home',
+        about: 'About',
+        contacts: 'Contacts'
+      },
+      download: 'Download'
     },
     newsletter: {
       title: "Subscribe to Our Newsletter",
@@ -808,5 +814,112 @@ export default {
         }
       ]
     }
+  },
+  hero: {
+    title: 'Your Game Title',
+    subtitle: 'Experience the Adventure',
+    description: 'Immerse yourself in an exciting world of endless possibilities'
+  },
+  gameplay: {
+    title: 'Gameplay',
+    mechanics: {
+      title: 'Game Mechanics',
+      description: 'Discover unique gameplay features'
+    },
+    features: {
+      title: 'Key Features',
+      list: [
+        'Feature 1',
+        'Feature 2',
+        'Feature 3'
+      ]
+    }
+  },
+  gallery: {
+    title: 'Gallery',
+    download: 'Download Now',
+    images: {
+      screenshot1: 'Gameplay Screenshot 1',
+      screenshot2: 'Gameplay Screenshot 2'
+    }
+  },
+  features: {
+    title: 'Game Features',
+    items: [
+      {
+        title: 'Feature 1',
+        description: 'Description of feature 1'
+      },
+      {
+        title: 'Feature 2',
+        description: 'Description of feature 2'
+      },
+      {
+        title: 'Feature 3',
+        description: 'Description of feature 3'
+      },
+      {
+        title: 'Feature 4',
+        description: 'Description of feature 4'
+      },
+      {
+        title: 'Feature 5',
+        description: 'Description of feature 5'
+      },
+      {
+        title: 'Feature 6',
+        description: 'Description of feature 6'
+      }
+    ]
+  },
+  testimonials: {
+    title: 'Player Reviews',
+    items: [
+      {
+        name: 'Player 1',
+        text: 'Review text 1'
+      },
+      {
+        name: 'Player 2',
+        text: 'Review text 2'
+      },
+      {
+        name: 'Player 3',
+        text: 'Review text 3'
+      }
+    ]
+  },
+  contact: {
+    title: 'Contact Us',
+    form: {
+      name: 'Your Name',
+      email: 'Your Email',
+      message: 'Your Message',
+      submit: 'Send Message'
+    },
+    info: {
+      title: 'Contact Information',
+      address: 'Address',
+      businessHours: 'Business Hours',
+      email: 'Email',
+      phone: 'Phone'
+    }
+  },
+  footer: {
+    navigation: {
+      home: 'Home',
+      about: 'About',
+      contacts: 'Contacts'
+    },
+    sections: {
+      legal: {
+        title: 'Legal Information',
+      }
+    },
+    legal: {
+      privacy: 'Privacy Policy',
+      terms: 'Terms of Service'
+    },
+    copyright: '© 2024 Your Game. All rights reserved.'
   }
 } 

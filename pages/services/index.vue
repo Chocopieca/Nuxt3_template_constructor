@@ -43,7 +43,7 @@
 
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
-import AppCard from '~/templates/default/components/AppCard.vue'
+import AppCard from '~/components/AppCard.vue'
 import { servicesImages } from '~/config/site'
 import { SERVICES, SERVICE_ROUTES } from '~/constants/services'
 

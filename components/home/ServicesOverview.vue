@@ -6,10 +6,14 @@
 
         <AppCard>
           <div class="relative h-48 mb-6 bg-gray-200 rounded-lg overflow-hidden">
-            <img 
+            <NuxtImg 
               :src="servicesImages[SERVICES.WEB_DESIGN].src"
               :alt="servicesImages[SERVICES.WEB_DESIGN].alt"
               class="w-full h-full object-cover"
+              width="400"
+              height="192"
+              loading="lazy"
+              sizes="sm:100vw md:50vw lg:400px"
             />
           </div>
           <h3 class="text-2xl font-semibold mb-4 text-gray-800">{{ t('components.service.0.title') }}</h3>
@@ -27,10 +31,14 @@
 
         <AppCard>
           <div class="relative h-48 mb-6 bg-gray-200 rounded-lg overflow-hidden">
-            <img 
+            <NuxtImg 
               :src="servicesImages[SERVICES.BRAND_IDENTITY].src"
               :alt="servicesImages[SERVICES.BRAND_IDENTITY].alt"
               class="w-full h-full object-cover"
+              width="400"
+              height="192"
+              loading="lazy"
+              sizes="sm:100vw md:50vw lg:400px"
             />
           </div>
           <h3 class="text-2xl font-semibold mb-4 text-gray-800">{{ t('components.service.1.title') }}</h3>
@@ -48,10 +56,14 @@
 
         <AppCard>
           <div class="relative h-48 mb-6 bg-gray-200 rounded-lg overflow-hidden">
-            <img 
+            <NuxtImg 
               :src="servicesImages[SERVICES.UI_UX_DESIGN].src"
               :alt="servicesImages[SERVICES.UI_UX_DESIGN].alt"
               class="w-full h-full object-cover"
+              width="400"
+              height="192"
+              loading="lazy"
+              sizes="sm:100vw md:50vw lg:400px"
             />
           </div>
           <h3 class="text-2xl font-semibold mb-4 text-gray-800">{{ t('components.service.2.title') }}</h3>
